@@ -1,6 +1,6 @@
 // Bismillahir Rahmanir Rahim
 // Nafis Chowdhury
-// Array Using Build in Data Structure
+// Stack Using Build in Data Structure
 
 #include<iostream>
 #include<stack>
