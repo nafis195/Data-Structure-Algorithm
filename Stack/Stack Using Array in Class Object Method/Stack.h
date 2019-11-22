@@ -1,7 +1,6 @@
 // Bismillahir Rahmanir Rahim
-
+// Nafis Chowdhury
 // Stack Using Array in Class Object Method
-
 // Stack.h
 
 #pragma once
