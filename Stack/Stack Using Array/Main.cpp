@@ -1,6 +1,7 @@
 // Bismillahir Rahmanir Rahim
-
+// Nafis Chowdhury
 // Stack Using Array
+// Main.cpp
 
 #include<iostream>
 #define MAX_SIZE 101
