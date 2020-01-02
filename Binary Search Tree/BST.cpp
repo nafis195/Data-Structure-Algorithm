@@ -8,20 +8,25 @@
 using namespace std;
 
 // to create new node
-bstnode* BST::getNewNode(int data)
-{
-	bstnode* newNode = new bstnode();
-	newNode->data = data;
-	newNode->left = NULL;
-	newNode->right = NULL;
-	return newNode;
-}
+//bstnode* BST::getNewNode(int data)
+//{
+//	bstnode* newNode = new bstnode();
+//	newNode->data = data;
+//	newNode->left = NULL;
+//	newNode->right = NULL;
+//	return newNode;
+//}
 
 // to insert data in BST
 bstnode* BST::insert(bstnode* root, int data)
 {
 	if (root == NULL)  // while the BST is empty
-		getNewNode(data);
+	{	//getNewNode(data);
+		root = new bstnode();
+		root->data = data;
+		root->left = NULL;
+		root->right = NULL;
+	}
 	else if (data <= root->data)  // while data is lesser than root data, then insert in the left subtree
 		insert(root->left, data);
 	else  // while data is greater than root data, then insert in the right subtree
@@ -54,13 +59,14 @@ void BST::levelOrder(bstnode* root)
 	while (!BSTQ.empty())
 	{
 		bstnode* current = BSTQ.front();
-		BSTQ.pop();
 		cout << current->data << ' ';
 		if (current->left != NULL)
 			BSTQ.push(current->left);
 		if (current->right != NULL)
 			BSTQ.push(current->right);
+		BSTQ.pop();
 	}
+	cout << endl;
 }
 
 // preorder traversal
@@ -72,6 +78,7 @@ void BST::preOrder(bstnode* root)
 	cout << root->data << ' ';  // printing data
 	preOrder(root->left);  // visting left subtree
 	preOrder(root->right);  // visiting right subtree
+	cout << endl;
 }
 
 // inorder traversal
@@ -83,6 +90,7 @@ void BST::inOrder(bstnode* root)
 	inOrder(root->left);  // visiting left subtree
 	cout << root->data << ' ';  // printing data
 	inOrder(root->right);  // visiting right subtree
+	cout << endl;
 }
 
 // postorder traversal
@@ -94,4 +102,5 @@ void BST::postOrder(bstnode* root)
 	postOrder(root->left);  // visiting left subtree
 	postOrder(root->right);  // visiting right subtree
 	cout << root->data << ' ';  // printing data
+	cout << endl;
 }

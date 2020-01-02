@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-	BST bst;  // creating of an object of BST class
+	BST bst;  // creating an object of BST class
 
 	bstnode* root = NULL;  // creating an empty tree
 
@@ -23,6 +23,16 @@ int main()
 
 	// level order or DFS
 	bst.levelOrder(root);
+
+	root = NULL;  // creating an empty tree again
+
+	// inserting element to the tree again
+	root = bst.insert(root, 15);
+	root = bst.insert(root, 10);
+	root = bst.insert(root, 20);
+	root = bst.insert(root, 25);
+	root = bst.insert(root, 8);
+	root = bst.insert(root, 12);
 
 	// preorder
 	bst.preOrder(root);
@@ -43,6 +53,5 @@ int main()
 		cout << "The number is not in the tree." << endl;
 
 	cout << endl;
-	system("pause");
 	return 0;
 }

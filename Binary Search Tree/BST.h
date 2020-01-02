@@ -13,7 +13,7 @@
 class BST
 {
 public:
-	bstnode* getNewNode(int data);  // to create new node
+	//bstnode* getNewNode(int data);  // to create new node
 	bstnode* insert(bstnode* root, int data);  // to insert data in BST
 	bool search(bstnode* root, int data);  // to search element in BST
 	void levelOrder(bstnode* root);  // level order traversal or DFS
