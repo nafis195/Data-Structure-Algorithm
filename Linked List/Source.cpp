@@ -178,7 +178,7 @@ int min_element(Node* root)
 }
 
 
-//===================Searching FUnction================
+//===================Searching Function================
 bool Search(Node* root, int value)
 {
 	Node* temp = new Node();
@@ -196,14 +196,52 @@ bool Search(Node* root, int value)
 }
 
 
+//==================Check Sorted or Not==================
+bool Sorted(Node* root)
+{
+	Node* temp = new Node();
+	temp = head;
+
+	while (temp->next != NULL)
+	{
+		if (temp->data < temp->next->data)
+			temp = temp->next;
+		else
+			return false;
+	}
+
+	return true;
+}
+
+
+//==================Reverse a Linked List Non-recursive Function================
+void reverse_linked_list_non_recursive_function()
+{
+	Node* p = NULL;
+	Node* q = NULL;
+	Node* r = NULL;
+	p =  head;
+
+	while (p != NULL)
+	{
+		r = q;
+		q = p;
+		p = p->next;
+		q->next = r;
+	}
+
+	head = q;
+}
+
+
 //==================Main Function=======================
 int main()
 {
 	InsertEnd(12);
-	InsertEnd(10);
-	InsertEnd(16);
-	InsertEnd(14);
-	InsertEnd(13);
+	InsertEnd(20);
+	InsertEnd(26);
+	InsertEnd(34);
+	InsertEnd(43);
 
 	recursive_display_from_first_to_last(head);
 	cout << endl;
@@ -221,10 +259,20 @@ int main()
 
 	/*cout << min_element(head) << endl;*/
 
-	if(Search(head, 160))
-		cout << "Item is in the list" << endl;
-	else
-		cout << "Item is not in the list" << endl;
+	//if(Search(head, 160))
+	//	cout << "Item is in the list" << endl;
+	//else
+	//	cout << "Item is not in the list" << endl;
+
+	//if (Sorted(head))
+	//	cout << "Linked list is sorted" << endl;
+	//else
+	//	cout << "Linked list is not sorted" << endl;
+
+	//reverse_linked_list_non_recursive_function();
+	//display_from_first_to_last();
+
+
 
 	return 0;
 }
