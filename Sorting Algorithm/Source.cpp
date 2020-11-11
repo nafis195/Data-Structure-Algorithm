@@ -18,6 +18,7 @@ void Display(int A[], int size);
 //void Swap(int* x, int* y);
 void Bubble_Sort(int A[], int size);
 void Insertion_Sort(int A[], int size);
+void Selection_Sort(int A[], int size);
 
 
 //================Main Function===============
@@ -30,7 +31,10 @@ int main()
 	//Bubble_Sort(myArray, arraySize);
 	//Display(myArray, arraySize);
 
-	Insertion_Sort(myArray, arraySize);
+	//Insertion_Sort(myArray, arraySize);
+	//Display(myArray, arraySize);
+
+	Selection_Sort(myArray, arraySize);
 	Display(myArray, arraySize);
 
 	return 0;
@@ -98,5 +102,24 @@ void Insertion_Sort(int A[], int size)
 		}
 
 		A[j + 1] = x;
+	}
+}
+
+
+//============Function for Selection Sort==============
+void Selection_Sort(int A[], int size)
+{
+	int j;
+	int k;
+
+	for (int i = 0; i < size; i++)
+	{
+		for (j = k = i; j < size; j++)
+		{
+			if (A[j] < A[k])
+				k = j;
+		}
+
+		swap(A[i], A[k]);
 	}
 }
