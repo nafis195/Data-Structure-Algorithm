@@ -17,6 +17,7 @@ using namespace std;
 void Display(int A[], int size);
 //void Swap(int* x, int* y);
 void Bubble_Sort(int A[], int size);
+void Insertion_Sort(int A[], int size);
 
 
 //================Main Function===============
@@ -26,7 +27,10 @@ int main()
 	int arraySize = sizeof(myArray) / sizeof(myArray[0]);
 	Display(myArray, arraySize);
 
-	Bubble_Sort(myArray, arraySize);
+	//Bubble_Sort(myArray, arraySize);
+	//Display(myArray, arraySize);
+
+	Insertion_Sort(myArray, arraySize);
 	Display(myArray, arraySize);
 
 	return 0;
@@ -72,5 +76,27 @@ void Bubble_Sort(int A[], int size)
 
 		if (flag == 0)
 			break;
+	}
+}
+
+
+//============Function for Insertion Sort==============
+void Insertion_Sort(int A[], int size)
+{
+	int j;
+	int x;
+
+	for (int i = 0; i < size; i++)
+	{
+		j = i - 1;
+		x = A[i];
+
+		while (j >= 0 && A[j] > x)
+		{
+			A[j + 1] = A[j];
+			j--;
+		}
+
+		A[j + 1] = x;
 	}
 }
